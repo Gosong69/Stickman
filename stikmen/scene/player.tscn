@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dp07sl4gefcbx"]
+
+[ext_resource type="Script" uid="uid://cfg2qx4uqui5l" path="res://script/player.gd" id="1_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://dq66kjp37m4px" path="res://asset karakter/idle.png" id="2_s4jxa"]
+[ext_resource type="Texture2D" uid="uid://d306yth3lfa7d" path="res://asset karakter/run.png" id="3_g2vtq"]
+[ext_resource type="Texture2D" uid="uid://b4cmdj41pyq1r" path="res://asset karakter/walk2.png" id="3_oh5ij"]
+[ext_resource type="Texture2D" uid="uid://y25y3wuymbis" path="res://asset karakter/run2.png" id="4_2fvbb"]
+[ext_resource type="Texture2D" uid="uid://cg3ltnc1t4g6q" path="res://asset karakter/walk.png" id="4_hp4bs"]
+[ext_resource type="Texture2D" uid="uid://d1e6rmna0emwh" path="res://asset karakter/run3.png" id="5_ml7e8"]
+[ext_resource type="Texture2D" uid="uid://cxip1vot6rpsw" path="res://asset karakter/run4.png" id="6_ihjo1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5xvci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s4jxa")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hp4bs")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g2vtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2fvbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ml7e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ihjo1")
+}],
+"loop": true,
+"name": &"run",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 3.7,
+"texture": ExtResource("3_oh5ij")
+}, {
+"duration": 2.41,
+"texture": ExtResource("4_hp4bs")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y30ri"]
+size = Vector2(55, 104.5)
+
+[node name="Player" type="CharacterBody2D" unique_id=122586325]
+position = Vector2(34, 54)
+script = ExtResource("1_ct4mp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=327365595]
+position = Vector2(2.999939, 10)
+scale = Vector2(0.29062504, 0.2687691)
+sprite_frames = SubResource("SpriteFrames_5xvci")
+animation = &"jump"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1379562745]
+position = Vector2(-8, 10)
+shape = SubResource("RectangleShape2D_y30ri")

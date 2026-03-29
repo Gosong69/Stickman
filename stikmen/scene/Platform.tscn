@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cb4dr60j2gj1d"]
+
+[ext_resource type="Texture2D" uid="uid://d331klm667yfi" path="res://asset bangunan/Pagarpng.png" id="1_e2b50"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2b50"]
+size = Vector2(442, 21)
+
+[node name="AnimatedSprite2D" type="AnimatableBody2D" unique_id=1249113855]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1757312552]
+position = Vector2(-5, 0)
+texture = ExtResource("1_e2b50")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=681272398]
+position = Vector2(-13, 9.5)
+shape = SubResource("RectangleShape2D_e2b50")
+one_way_collision = true
